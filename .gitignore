@@ -1,0 +1,10 @@
+# .gitignore
+node_modules/
+*.zip
+*.xpi
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+server/node_modules/
