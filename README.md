@@ -49,7 +49,7 @@ Install the extension directly from the official Firefox Add-ons store.
 
 ### Quick Start
 
-1. **Install and start the Claude server as explained in [INSTALL.md](INSTALL.md)**:
+1. **Install and start the Claude server as explained in [docs/INSTALL.md](docs/INSTALL.md)**:
    ```bash
    cd server
    npm install
