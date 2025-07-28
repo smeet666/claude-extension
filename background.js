@@ -75,6 +75,14 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "reformulate-popup",
+  parentId: "claude-popup",
+  title: "Reformulate",
+  contexts: MENU_CONTEXTS,
+});
+
+
+chrome.contextMenus.create({
   id: "explain-popup",
   parentId: "claude-popup",
   title: "Explain",
@@ -96,13 +104,6 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-  id: "translatefr-popup",
-  parentId: "claude-popup",
-  title: "Translate to French",
-  contexts: MENU_CONTEXTS,
-});
-
-chrome.contextMenus.create({
   id: "translateenuk-popup",
   parentId: "claude-popup",
   title: "Translate to English (UK)",
@@ -115,6 +116,14 @@ chrome.contextMenus.create({
   title: "Translate to English (US)",
   contexts: MENU_CONTEXTS,
 });
+
+chrome.contextMenus.create({
+  id: "translatefr-popup",
+  parentId: "claude-popup",
+  title: "Translate to French",
+  contexts: MENU_CONTEXTS,
+});
+
 
 chrome.contextMenus.create({
   id: "translatees-popup",
@@ -147,6 +156,13 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+  id: "reformulate-inline",
+  parentId: "claude-inline",
+  title: "Reformulate",
+  contexts: MENU_CONTEXTS,
+});
+
+chrome.contextMenus.create({
   id: "explain-inline",
   parentId: "claude-inline",
   title: "Explain",
@@ -168,13 +184,6 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
-  id: "translatefr-inline",
-  parentId: "claude-inline",
-  title: "Translate to French",
-  contexts: MENU_CONTEXTS,
-});
-
-chrome.contextMenus.create({
   id: "translateenuk-inline",
   parentId: "claude-inline",
   title: "Translate to English (UK)",
@@ -185,6 +194,13 @@ chrome.contextMenus.create({
   id: "translateenus-inline",
   parentId: "claude-inline",
   title: "Translate to English (US)",
+  contexts: MENU_CONTEXTS,
+});
+
+chrome.contextMenus.create({
+  id: "translatefr-inline",
+  parentId: "claude-inline",
+  title: "Translate to French",
   contexts: MENU_CONTEXTS,
 });
 
@@ -261,6 +277,13 @@ const specificInstructions = {
   translateenus: getTranslationInstructions("English (US)"),
 
   translatees: getTranslationInstructions("Spanish"),
+
+  reformulate: `
+- Rewrite the text with different words and sentence structures
+- Keep the same meaning and language
+- Use professional and contextually appropriate vocabulary
+- Improve clarity and flow
+- Return ONLY the reformulated text`,
 };
 
 // Combine base instructions with specific ones

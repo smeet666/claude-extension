@@ -14,6 +14,7 @@ Transform selected text with AI-powered tools directly from Firefox context menu
 - 📝 **Elaborate** - Expand ideas with more detail
 - 🎨 **Illustrate** - Generate SVG diagrams from text
 - 🌍 **Translate** - Quick translation to French, Spanish, English (UK/US)
+- 🔀 **Reformulate** - Rewrite text with professional vocabulary
 
 ## Screenshots
 
@@ -75,6 +76,7 @@ Install the extension directly from the official Firefox Add-ons store.
 - **Elaborate**: Expands text with more detail and formality
 - **Illustrate**: Creates SVG diagrams based on content type
 - **Translate**: Maintains tone while translating to target language
+- **Reformulate**: Rewrites text with professional vocabulary and improved clarity
 
 ## Configuration
 
