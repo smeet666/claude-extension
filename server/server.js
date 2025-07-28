@@ -3,7 +3,35 @@ const { exec } = require("child_process");
 const cors = require('cors');
 const app = express();
 const port = 3000;
-app.use(cors());
+
+// Configure CORS to block HTTP origins
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Handle different origin cases
+    if (origin === undefined) {
+      // No origin header = likely an extension or direct tool
+      callback(null, true);
+    } else if (origin === 'null' || origin === null) {
+      // Origin "null" = file:// protocol, block it
+      console.log('🚫 Blocked request from file:// protocol');
+      callback(null, false);
+    } else if (origin.startsWith('moz-extension://') || origin.startsWith('chrome-extension://')) {
+      // Explicitly allow browser extensions
+      callback(null, true);
+    } else if (origin.startsWith('http://') || origin.startsWith('https://')) {
+      // Block all HTTP/HTTPS origins
+      console.log('🚫 Blocked request from:', origin);
+      callback(null, false);
+    } else {
+      // Block any other unknown origin
+      console.log('🚫 Blocked request from unknown origin:', origin);
+      callback(null, false);
+    }
+  },
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: "2mb" }));
 // Simple cache to avoid re-requesting the same things
 const cache = new Map();

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Claude Context Menu",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "author": "Damien Bouissou",
   "description": "Context menu extension to enhance text with Claude AI - summarize, beautify, translate, and more.",
   
