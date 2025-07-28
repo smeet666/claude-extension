@@ -32,6 +32,13 @@ app.use(express.json({ limit: "2mb" }));
 // Simple cache to avoid re-requesting the same things
 const cache = new Map();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+// Clear cache every 10 minutes
+setInterval(() => {
+  console.log(`🧹 Clearing cache (${cache.size} entries)`);
+  cache.clear();
+}, 10 * 60 * 1000); // 10 minutes
+
 app.post("/claude", async (req, res) => {
   console.log('🟡 Request received');
   const inputText = req.body.input;
