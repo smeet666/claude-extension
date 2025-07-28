@@ -4,7 +4,7 @@ Transform selected text with AI-powered tools directly from Firefox context menu
 
 ![Firefox](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)
+![Version](https://img.shields.io/badge/Version-3.0.0-green.svg)
 
 ## Features
 
